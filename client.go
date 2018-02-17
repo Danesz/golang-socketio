@@ -51,7 +51,7 @@ func Dial(url string, nsp string, tr transport.Transport) (*Client, error) {
 		return nil, err
 	}
 	
-	if nsp != nil {
+	if nsp != "" {
 	    nspMsg := fmt.Sprintf("4%d%s", protocol.MessageTypeOpen, nsp)
 	    c.conn.WriteMessage(nspMsg)
 	}
